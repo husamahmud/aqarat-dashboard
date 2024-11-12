@@ -1,0 +1,19 @@
+{
+	"tasks": {
+		"dev": {
+			"cache": false
+		},
+		"build": {
+			"outputs": [
+				"dist/**",
+				".next/**"
+			]
+		},
+		"lint": {
+			"outputs": []
+		},
+		"format": {
+			"outputs": []
+		}
+	}
+}

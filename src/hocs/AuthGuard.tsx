@@ -8,8 +8,12 @@ import type { ChildrenType } from '@core/types'
 // Component Imports
 import AuthRedirect from '@/components/AuthRedirect'
 
-export default async function AuthGuard({ children, locale }: ChildrenType & { locale: Locale }) {
+export default async function AuthGuard({ children, locale }: ChildrenType & {
+  locale: Locale
+}) {
   const session = await getServerSession()
 
-  return <>{session ? children : <AuthRedirect lang={locale} />}</>
+  // todo: update auth redirect
+  // return <>{session ? children : <AuthRedirect lang={locale} />}</>
+  return children
 }
