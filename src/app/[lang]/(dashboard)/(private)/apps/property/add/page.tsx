@@ -3,10 +3,10 @@ import Grid from '@mui/material/Grid'
 
 // Component Imports
 import AddCard from '@views/apps/invoice/add/AddCard'
-import AddActions from '@views/apps/invoice/add/AddActions'
+import type { Locale } from '@configs/i18n'
 
 // Data Imports
-import { getInvoiceData } from '@/app/server/actions'
+import { getDictionary } from '@/utils/getDictionary'
 
 /**
  * ! If you need data using an API call, uncomment the below API code, update the `process.env.API_URL` variable in the
@@ -26,17 +26,16 @@ import { getInvoiceData } from '@/app/server/actions'
   return res.json()
 }
  */
-const InvoiceAdd = async () => {
-  // Vars
-  const data = await getInvoiceData()
+const InvoiceAdd = async ({ params }: { params: { lang: Locale } }) => {
+  const dictionary = await getDictionary(params.lang)
 
   return (
-    <Grid container spacing={6}>
-      <Grid item xs={12} md={9}>
-        <AddCard invoiceData={data} />
-      </Grid>
-      <Grid item xs={12} md={3}>
-        <AddActions />
+    <Grid container
+          spacing={6}>
+      <Grid item
+            xs={12}
+            md={12}>
+        <AddCard dictionary={dictionary} />
       </Grid>
     </Grid>
   )

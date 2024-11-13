@@ -47,9 +47,6 @@ const EditPage = async ({ params }: { params: { id: string } }) => {
       <Grid item xs={12} md={9}>
         <EditCard data={data} invoiceData={filteredData} id={params.id} />
       </Grid>
-      <Grid item xs={12} md={3}>
-        <EditActions id={params.id} />
-      </Grid>
     </Grid>
   ) : null
 }

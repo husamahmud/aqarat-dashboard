@@ -106,5 +106,10 @@
 		"menuLevel2": "مستوى القائمة 2",
 		"menuLevel3": "مستوى القائمة 3",
 		"disabledMenu": "قائمة المعوقين"
+	},
+	"dashboard": {
+		"addProperty": "إضافة عقار",
+		"inputData": "أدخل البيانات المطلوبة لنشر عقارك",
+		"requiredData": "المعلومات الاساسية"
 	}
 }

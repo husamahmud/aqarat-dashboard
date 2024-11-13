@@ -104,18 +104,18 @@ const VerticalMenu = ({ dictionary, scrollMenu }: Props) => {
         <MenuSection label={dictionary['navigation'].appsPages}>
           <SubMenu label={dictionary['navigation'].propertiesManagement}
                    icon={<PhBuildingApartment />}>
-            <MenuItem href={`/${locale}/apps/ecommerce/dashboard`}>{dictionary['navigation'].editPropertites}</MenuItem>
-            <MenuItem href={`/${locale}/apps/ecommerce/manage-reviews`}>{dictionary['navigation'].addProperty}</MenuItem>
+            <MenuItem href={`/${locale}/apps/property/edit/4987`}>{dictionary['navigation'].editPropertites}</MenuItem>
+            <MenuItem href={`/${locale}/apps/property/add`}>{dictionary['navigation'].addProperty}</MenuItem>
           </SubMenu>
 
           <SubMenu label={dictionary['navigation'].auction}
                    icon={<i className="bx-food-menu" />}>
-            <MenuItem href={`/${locale}/apps/invoice/edit/4987`}
+            <MenuItem href={`/${locale}/apps/ecommerce/manage-reviews`}
                       exactMatch={false}
-                      activeUrl="/apps/invoice/edit">
+                      activeUrl="/apps/ecommerce/manage-reviews">
               {dictionary['navigation'].edit}
             </MenuItem>
-            <MenuItem href={`/${locale}/apps/invoice/add`}>{dictionary['navigation'].add}</MenuItem>
+            <MenuItem href={`/${locale}/apps/ecommerce/manage-reviews`}>{dictionary['navigation'].add}</MenuItem>
           </SubMenu>
 
           <SubMenu label={dictionary['navigation'].ads}

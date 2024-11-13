@@ -111,5 +111,10 @@
 		"menuLevel2": "Menu Level 2",
 		"menuLevel3": "Menu Level 3",
 		"disabledMenu": "Disabled Menu"
+	},
+	"dashboard": {
+		"addProperty": "Add Property",
+		"inputData": "Enter the required data to list your property",
+		"requiredData": "Required Data"
 	}
 }

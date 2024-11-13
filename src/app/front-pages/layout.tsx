@@ -1,8 +1,11 @@
+import { Noto_Kufi_Arabic } from 'next/font/google'
+
 // MUI Imports
 import Button from '@mui/material/Button'
 
 // Third-party Imports
 import 'react-perfect-scrollbar/dist/css/styles.css'
+import clx from 'clsx'
 
 // Type Imports
 import type { ChildrenType } from '@core/types'
@@ -25,10 +28,15 @@ import '@/app/globals.css'
 // Generated Icon CSS Imports
 import '@assets/iconify-icons/generated-icons.css'
 
+const notoKufiArabic = Noto_Kufi_Arabic({
+  weight: ['100', '300', '400', '700', '900'],
+  subsets: ['arabic', 'latin'],
+})
+
 export const metadata = {
   title: 'Sneat - MUI Next.js Admin Dashboard Template',
   description:
-    'Sneat - MUI Next.js Admin Dashboard Template - is the most developer friendly & highly customizable Admin Dashboard Template based on MUI v5.'
+    'Sneat - MUI Next.js Admin Dashboard Template - is the most developer friendly & highly customizable Admin Dashboard Template based on MUI v5.',
 }
 
 const Layout = ({ children }: ChildrenType) => {
@@ -36,26 +44,26 @@ const Layout = ({ children }: ChildrenType) => {
   const systemMode = getSystemMode()
 
   return (
-    <html id='__next'>
-      <body className='flex is-full min-bs-full flex-auto flex-col'>
-        <Providers direction='ltr'>
-          <BlankLayout systemMode={systemMode}>
-            <IntersectionProvider>
-              <FrontLayout>
-                {children}
-                <ScrollToTop className='mui-fixed'>
-                  <Button
-                    variant='contained'
-                    className='is-10 bs-10 rounded-full p-0 min-is-0 flex items-center justify-center'
-                  >
-                    <i className='bx-up-arrow-alt' />
-                  </Button>
-                </ScrollToTop>
-              </FrontLayout>
-            </IntersectionProvider>
-          </BlankLayout>
-        </Providers>
-      </body>
+    <html id="__next">
+    <body className={clx('flex is-full min-bs-full flex-auto flex-col', notoKufiArabic.className)}>
+    <Providers direction="ltr">
+      <BlankLayout systemMode={systemMode}>
+        <IntersectionProvider>
+          <FrontLayout>
+            {children}
+            <ScrollToTop className="mui-fixed">
+              <Button
+                variant="contained"
+                className="is-10 bs-10 rounded-full p-0 min-is-0 flex items-center justify-center"
+              >
+                <i className="bx-up-arrow-alt" />
+              </Button>
+            </ScrollToTop>
+          </FrontLayout>
+        </IntersectionProvider>
+      </BlankLayout>
+    </Providers>
+    </body>
     </html>
   )
 }
