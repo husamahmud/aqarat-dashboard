@@ -1,44 +1,31 @@
-import { FormProvider, useForm } from 'react-hook-form'
-import Typography from '@mui/material/Typography'
-import type { getDictionary } from '@/utils/getDictionary'
-import ToggleButtonGroupField
-  from '@components/properties/ToggleButtonGroupField'
+import RequiredData from '@components/properties/RequiredData'
 
-
-type Props = {
-  dictionary: Awaited<ReturnType<typeof getDictionary>>
+interface MediaProps {
+  File: File
+  isPrimary: boolean
 }
 
-export default function AddPropertyForm({ dictionary }: Props) {
-  const methods = useForm<FormData>()
-  const { handleSubmit } = methods
+interface FormData {
+  Title: string
+  CountryID: string
+  CityID: string
+  NeighborhoodID: string
+  Longitude: string
+  Latitude: string
+  Address: string
+  IsFeatured: string
+  SakNumber: string
+  ValLicenseNumber: string
+  Video: File[]
+  PropertyTypeID: string
+  SpecificAqarTypesID: string
+  Media: MediaProps[]
+}
 
-  const onSubmit = (data: FormData) => {
-    console.log(data)
-  }
-
+export default function AddPropertyForm() {
   return (
-    <FormProvider {...methods}>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <p className="font-medium text-gold-400">
-          {dictionary['dashboard'].requiredData}
-        </p>
-
-        <div className="space-y-2">
-          <p className="font-medium">سبب عرض</p>
-
-          <ToggleButtonGroupField
-            name="type"
-            label="عرض العقار"
-            gridColumns={4}
-            options={[
-              { value: 'sale', label: 'بيع' },
-              { value: 'rent', label: 'ايجار' },
-              { value: 'rent', label: 'ايجار' },
-            ]}
-          />
-        </div>
-      </form>
-    </FormProvider>
+    <div className="">
+      <RequiredData />
+    </div>
   )
 }

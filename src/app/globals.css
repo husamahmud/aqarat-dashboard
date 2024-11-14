@@ -144,3 +144,9 @@ code {
 .font-noto-kufi {
 	font-family: "Noto Kufi Arabic", "sans-serif"
 }
+
+@layer base {
+  :root {
+		--radius: 0.5rem;
+	}
+}

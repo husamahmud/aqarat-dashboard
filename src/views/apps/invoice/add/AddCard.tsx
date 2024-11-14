@@ -16,19 +16,23 @@ const AddAction = ({ dictionary }: Props) => {
     <Card className="">
       <CardContent className="sm:!p-12">
         <Grid container>
-          <Grid item
-                xs={12}
-                className="mb-5">
+          <Grid
+            item
+            xs={12}
+            className="mb-5"
+          >
             <div className="flex flex-col gap-2">
-              <p className="font-semibold text-xl">{dictionary['dashboard'].addProperty}</p>
+              <p className="text-xl font-semibold">{dictionary['dashboard'].addProperty}</p>
               <p>{dictionary['dashboard'].inputData}</p>
             </div>
           </Grid>
 
-          <Grid item
-                xs={12}
-                className="border border-stone-100 rounded-lg p-5">
-            <AddPropertyForm dictionary={dictionary} />
+          <Grid
+            item
+            xs={12}
+            className="rounded-lg border border-stone-100 p-5"
+          >
+            <AddPropertyForm />
           </Grid>
         </Grid>
       </CardContent>
