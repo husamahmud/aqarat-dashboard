@@ -59,10 +59,14 @@ export function NavMain({ items }: { items: MenuItem[] }) {
         className="group/collapsible"
       >
         <SidebarMenuItem>
-          <CollapsibleTrigger asChild>
+          <CollapsibleTrigger
+            asChild
+            className="data-[state=open]:bg-gold-1 data-[state=open]:hover:bg-gold-1"
+          >
             <SidebarMenuButton
               tooltip={item.title}
               size={open ? 'lg' : 'sm'}
+              className="data-[state=open]:text-gold-3"
             >
               {item.icon && <item.icon />}
               <span>{item.title}</span>
